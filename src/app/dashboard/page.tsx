@@ -1,10 +1,39 @@
-import React from "react";
+"use client"
+import { notification } from "@/helpers/utils";
+import React, { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 const  Dashboard = () => {
+  const [count, setCount] = useState(0)
+
+
+useEffect(() => {
+  if(count < 0){
+  notification("Numero negativo", "error")
+  }
+  if(count > 0){
+  notification("Numero positivo", "success")
+  }
+}, [count])
+
+  const handleCountPlus = () => {
+    if(count < 15){
+      setCount(count + 1)
+    }else {
+      notification("no se puede mas", "error")
+    }
+
+  }
+  //menu tab
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <div>Hola desde el Dashboard</div>
-    </div>
+    <>
+      <h2>{count}</h2>
+      <button onClick={() => {setCount(count - 1)}} className="button">-1</button>
+      <button onClick={() => {setCount(0)}} className="button">reset</button>
+      <button onClick={handleCountPlus} className="button">+1</button>
+      <ToastContainer />
+    </>
   );
 }
 
