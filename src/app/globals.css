@@ -42,6 +42,7 @@ body {
   backdrop-filter: blur(2px); /*desenfoque sutil*/
 }
 
+
 .contenido h1 {
   font-size: 3rem;
   margin-bottom: 10px;
@@ -67,38 +68,21 @@ body {
   text-fill-color: transparent;
 }
 
-.navBar{
-  display: flex;
-  margin: 20px;
-  justify-content: space-between;
-  background-color: #0a0a0a;
-  font-size: x-large;
-  align-items: center;
+
+
+
+.contenidoDashboard {
+  text-align: start;
+  backdrop-filter: blur(2px);
+  justify-content: center; 
 }
 
-.P{
-  background: linear-gradient(135deg, hsl(51 100% 50%), hsl(14 100% 60%));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-}
-.navigate{
-  display: flex;
-  gap: 10px;
-  font-size: small;
-  color: rgb(218, 214, 214);
+.contenidoDashboard h1 {
+  font-size: 5rem;
+  margin-bottom: 10px;
 }
 
-.opciones{
-  position: relative;
-}
-
-.opciones:hover{
-  color: yellow;
-}
-
-.opciones:hover::after {
-  width: 100%;
-
-  
+.dashboardContainer{
+  margin-top: 80px;
+  background-color: rgb(8, 16, 27);
 }

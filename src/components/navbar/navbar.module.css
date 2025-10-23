@@ -1,0 +1,41 @@
+.navBar{
+  display: flex;
+  margin: 0;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: #0a0a0a;
+  font-size: x-large;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.P{
+  background: linear-gradient(135deg, hsl(51 100% 50%), hsl(14 100% 60%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+.navigate{
+  display: flex;
+  gap: 30px;
+  font-size: medium;
+  color: rgb(218, 214, 214);
+}
+
+.opciones{
+  position: relative;
+}
+
+.opciones:hover{
+  color: yellow;
+}
+
+.opciones:hover::after {
+  width: 100%;
+
+  
+}
