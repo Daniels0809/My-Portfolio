@@ -1,12 +1,15 @@
 "use client";
 import React from "react";
 import style from "./navbar.module.css"
+import Link from "next/link";
 
 export const Navbar = () => {
 
       const handleClick = () => {
     console.log("se hizo click");
   };
+
+
   return (
     <>
       <div className={style.navBar}>
@@ -15,19 +18,19 @@ export const Navbar = () => {
         </div>
         <div className={style.navigate}>
           <div className={style.opciones}>
-            <button onClick={handleClick}>Inicio</button>
+           <Link href="/">Home</Link>
           </div>
           <div className={style.opciones}>
-            <button onClick={handleClick}>Sobre Mí</button>
+            <Link href="dashboard">About me </Link>
           </div>
           <div className={style.opciones}>
-            <button onClick={handleClick}>Proyectos</button>
+            <Link href="projects">Projects</Link>
           </div>
           <div className={style.opciones}>
-            <button onClick={handleClick}>Servicios</button>
+            <Link href="services">Services</Link>
           </div>
           <div className={style.opciones}>
-            <button onClick={handleClick}>Contacto</button>
+            <Link href="contact">Contact</Link>
           </div>
         </div>
       </div>

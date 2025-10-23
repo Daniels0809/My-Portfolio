@@ -11,10 +11,10 @@ export default function Home() {
         
         <div className="contenido">
           <h1>
-            <span className="block span1">DESARROLLADOR </span>
-            <span className="block span2">WEB</span>
+            <span className="block span1">WEB </span>
+            <span className="block span2">DEVELOPER</span>
           </h1>
-          <div>
+          <div className="descriptionHome">
             <p>
               Este es mi portafolio, Transformo ideas audaces en experiencias
               digitales únicas. Diseñador, desarrollador y aventurero que crea

@@ -18,16 +18,19 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
+  font-weight: 900;
+  margin-left: 20px;
 }
 .navigate{
   display: flex;
   gap: 30px;
-  font-size: medium;
+  font-size: .85rem;
   color: rgb(218, 214, 214);
 }
 
 .opciones{
   position: relative;
+
 }
 
 .opciones:hover{
