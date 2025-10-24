@@ -24,7 +24,7 @@ export const Navbar = () => {
             <Link href="dashboard">About me </Link>
           </div>
           <div className={style.opciones}>
-            <Link href="projects">Projects</Link>
+            <Link href="proyect">Projects</Link>
           </div>
           <div className={style.opciones}>
             <Link href="services">Services</Link>
