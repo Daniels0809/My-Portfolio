@@ -4,13 +4,13 @@
   align-items: center;
 
   background-color: rgb(15, 23, 34);
-  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 10px;
   border: 1 solid rgba(248, 212, 91, 0.493);
   font-family: var(--font-bebas), sans-serif;
-    padding: 10px;
+  padding: 10px;
+  height: 150px;
 }
 
 .pasionCardContainer:hover {
@@ -20,8 +20,6 @@
 
 .icon {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-  margin-left: 15px;
 }
 
 .text {
@@ -30,4 +28,5 @@
   line-height: 1.4;
     text-align: center;
     margin-bottom: 15px;
+    width: 105%;
 }

@@ -60,6 +60,7 @@ body {
   text-fill-color: transparent;
   font-weight: 900;
   font-size: 5rem;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .span2 {
@@ -117,5 +118,12 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 10px;
+  font-family: var(--font-bebas), sans-serif;
+}
+
+
+.blockProjects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   font-family: var(--font-bebas), sans-serif;
 }
