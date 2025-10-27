@@ -21,16 +21,16 @@ export const Navbar = () => {
            <Link href="/">Home</Link>
           </div>
           <div className={style.opciones}>
-            <Link href="dashboard">About me </Link>
+            <Link href="/dashboard">About me </Link>
           </div>
           <div className={style.opciones}>
-            <Link href="proyect">Projects</Link>
+            <Link href="/proyect">Projects</Link>
           </div>
           <div className={style.opciones}>
-            <Link href="services">Services</Link>
+            <Link href="/myservices">Services</Link>
           </div>
           <div className={style.opciones}>
-            <Link href="contact">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </div>
         </div>
       </div>

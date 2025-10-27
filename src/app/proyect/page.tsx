@@ -1,54 +1,64 @@
 "use client";
 
 import { TrayectCard } from "@/components/card/TrayectCard";
+import Link from "next/link";
 import React from "react";
 
+const projects = [
+  {
+    icon: "/image-project-1.jpg",
+    age: "2025",
+    title: "V-MIND-PROJECT",
+    slug: "v-mind-project",
+    text: "A gamified learning platform that personalizes your learning journey through interactive roadmaps, progress tracking, and AI-powered recommendations.",
+  },
+  {
+    icon: "/image-project-2.jpg",
+    age: "2025",
+    title: "LIBRARY",
+    slug: "library",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit...",
+  },
+  {
+    icon: "/image-project-3.png",
+    age: "2022",
+    title: "USER MANAGEMENT",
+    slug: "user-management",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit...",
+  },
+  {
+    icon: "/image-project-1.jpg",
+    age: "2020",
+    title: "COUNTER",
+    slug: "counter",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit...",
+  },
+];
+
+
 const Projects = () => {
+
+
   return (
     <>
       <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-70 sm:p-20 containerProjects">
-        <div className="">
-          <div className="titleDashboard">
-          <h1 className="block span2">Projects</h1>
-          </div>
-        </div>
-
-        <div className="blockProjects about grid md:grid-cols-2  gap-10  mb-16">
-          <div className="">
-            <TrayectCard
-              icon="/image-project-1.jpg"
-              age="2025"
-              title="V-MIND-PROJECT"
-              text="A gamified learning platform that personalizes your learning journey through interactive roadmaps, progress tracking, and AI-powered recommendations."
-            />
-          </div>
-          <div>
-            <TrayectCard
-              icon="/image-project-2.jpg"
-              age="2025"
-              title="LIBRARY"
-              text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error officia unde dolor consequatur excepturi nisi illo explicabo, corporis quae perferendis distinctio sapiente iusto? Commodi facilis cupiditate sequi fugit eaque minus?" 
-            />
-            
-          </div>
-          <div>
-            <TrayectCard
-              icon="/image-project-3.png"
-              age="2022"
-              title="USER MANAGEMENT"
-              text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error officia unde dolor consequatur excepturi nisi illo explicabo, corporis quae perferendis distinctio sapiente iusto? Commodi facilis cupiditate sequi fugit eaque minus?"
-            />
-          </div>{" "}
-          <div>
-            <TrayectCard
-              icon="/image-project-1.jpg"
-              age="2020"
-              title="COUNTER"
-              text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error officia unde dolor consequatur excepturi nisi illo explicabo, corporis quae perferendis distinctio sapiente iusto? Commodi facilis cupiditate sequi fugit eaque minus?"
-            />
-          </div>
-        </div>
+      <div className="titleDashboard">
+        <h1 className="block span2">Projects</h1>
       </div>
+
+      <div className="blockProjects about grid md:grid-cols-2 gap-10 mb-16">
+        {projects.map((p) => (
+          <Link href={`/proyect/${p.slug}`} key={p.slug}>
+            <TrayectCard
+              icon={p.icon}
+              age={p.age}
+              title={p.title}
+              text={p.text}
+            />
+          </Link>
+        ))}
+      </div>
+    </div>
     </>
   );
 };

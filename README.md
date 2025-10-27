@@ -1,36 +1,180 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Portafolio Personal con Next.js (App Router)
 
-## Getting Started
+Este proyecto es un **portafolio personal** desarrollado con **Next.js (App Router)** que incluye navegación dinámica, presentación de proyectos, y un formulario de contacto con persistencia en base de datos MongoDB.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🧠 Descripción General
+
+El objetivo del proyecto es mostrar mis trabajos, habilidades y permitir que los visitantes me contacten mediante un formulario funcional que guarda los mensajes en una base de datos.  
+Se desarrolló siguiendo una metodología basada en **Historias de Usuario (HU)** y **criterios de aceptación claros**.
+
+---
+
+## 🗂️ Estructura del Proyecto
+
+```
+/app
+ ├── layout.tsx            # Layout principal (estructura base y navegación)
+ ├── page.tsx              # Página principal (Home)
+ ├── projects/             # Sección de proyectos
+ │   ├── page.tsx          # Lista de proyectos
+ │   └── [slug]/page.tsx   # Ruta dinámica de detalle del proyecto
+ ├── contact/page.tsx      # Página de contacto (formulario)
+/components
+ ├── TrayectCard.tsx       # Componente de tarjeta para proyectos
+ ├── Navbar.tsx            # Barra de navegación
+/models
+ ├── contactModel.ts       # Modelo Mongoose para mensajes
+/utils
+ ├── dbConnection.ts       # Conexión con MongoDB
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 💡 Historias de Usuario y Tareas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **HU: Portafolio personal con Next.js (App Router)**  
+> *Como coder que construye su marca personal, quiero crear un portafolio en Next.js (App Router) con rutas/páginas organizadas y un formulario de “Contáctame” que guarde los mensajes en una base de datos para presentar mi trabajo y captar oportunidades de forma profesional.*
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### 🧩 **TASK 1: Estructura del proyecto y layout base**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Objetivo:** Crear el proyecto Next.js, configurar `app/layout.tsx` y el Header/Nav común.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Criterios de Aceptación:**
+- ✅ Proyecto Next creado y corriendo con `npm run dev`
+- ✅ `layout.tsx` define estructura base (html, body, menú)
+- ✅ Estilos modulares o globales organizados
 
-## Deploy on Vercel
+**Story Points:** 1
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📁 **TASK 2: Rutas y navegación (incluye ruta dinámica)**
+
+**Objetivo:** Implementar Home, Projects (lista), Contact (formulario) y la ruta dinámica `/projects/[slug]`.
+
+**Criterios de Aceptación:**
+- ✅ `/home`, `/projects`, `/contact` creadas
+- ✅ Navegación funcional entre páginas
+- ✅ `/projects/[slug]` muestra detalles de un proyecto
+
+**Story Points:** 2
+
+---
+
+### 📨 **TASK 3: Formulario de “Contáctame” + validaciones**
+
+**Objetivo:** Construir formulario con validaciones tanto del lado cliente como servidor.
+
+**Criterios de Aceptación:**
+- ✅ Campos obligatorios: fullName, email, message
+- ✅ Validación con mensajes de error
+- ✅ Estado de envío y feedback visual (éxito o error)
+
+**Story Points:** 2
+
+---
+
+### 🗄️ **TASK 4: Persistencia en base de datos (MongoDB)**
+
+**Objetivo:** Guardar los mensajes del formulario en la base de datos mediante una API Route.
+
+**Criterios de Aceptación:**
+- ✅ Modelo `ContactMessage` con los campos: id, fullName, email, message, createdAt
+- ✅ Inserción exitosa crea registro en la DB
+- ✅ Manejo correcto de errores y respuestas HTTP
+
+**Story Points:** 2
+
+---
+
+## ⚙️ Tecnologías Utilizadas
+
+- **Next.js (App Router)**
+- **TypeScript**
+- **React**
+- **TailwindCSS**
+- **MongoDB + Mongoose**
+- **Node.js**
+- **CSS Modules**
+
+---
+
+## 🚀 Instalación y Ejecución
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/usuario/portafolio-next.git
+   ```
+2. Instalar dependencias:
+   ```bash
+   npm install
+   ```
+3. Crear archivo `.env.local` con tu conexión MongoDB:
+   ```env
+   MONGODB_URI="tu_conexion_mongodb"
+   ```
+4. Iniciar el servidor:
+   ```bash
+   npm run dev
+   ```
+5. Abrir en el navegador:
+   ```bash
+   http://localhost:3000
+   ```
+
+---
+
+## 🧱 Estructura de Datos (MongoDB)
+
+**Colección:** `contact_me`  
+**Esquema:**
+
+| Campo       | Tipo      | Descripción                    |
+|--------------|-----------|--------------------------------|
+| `fullName`   | String    | Nombre completo del remitente  |
+| `email`      | String    | Correo electrónico             |
+| `message`    | String    | Mensaje enviado                |
+| `createdAt`  | Date      | Fecha del envío                |
+
+---
+
+## 🌐 Rutas Principales
+
+| Ruta | Descripción |
+|------|--------------|
+| `/` | Página principal (Home) |
+| `/projects` | Lista de proyectos |
+| `/projects/[slug]` | Detalle dinámico de un proyecto |
+| `/contact` | Formulario de contacto |
+
+---
+
+## 🧩 Ejemplo de Ruta Dinámica
+
+Cada proyecto tiene un **slug único** (por ejemplo, `v-mind-project`, `counter`, `library`) y se accede mediante:  
+```
+/projects/[slug]
+```
+
+Ejemplo:  
+```
+/projects/counter
+```
+
+---
+
+## 🧾 Cierre de Actividad
+
+✅ Portafolio completo con App Router, 3+ páginas y navegación funcional.  
+✅ Formulario persistente conectado a MongoDB.  
+✅ Proyecto documentado según requerimientos de la Historia de Usuario.  
+
+---
+
+**Autor:** Daniel Ospina  
+**Tecnologías:** Next.js, React, TypeScript, MongoDB  
+**Fecha:** Octubre 2025  
